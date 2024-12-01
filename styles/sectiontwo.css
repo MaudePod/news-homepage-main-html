@@ -1,0 +1,61 @@
+section[class="two"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-self: center;
+    width: 80cqw;
+    counter-reset: article-count;
+}
+
+section[class="other-card"] {
+    display: grid;
+    grid-template-columns: 30fr 70fr;
+    gap: 10px;
+}
+
+section[class="other-card-image"] {
+    width: 100%;
+    height: 100%;
+}
+
+section[class="other-card-image"] img {
+    width: 100%;
+    height: 100%;
+}
+
+section[class="two"] article {
+    display: grid;
+    align-content: center;
+    justify-content: space-around;
+}
+
+section[class="two"] article h3::before {
+    counter-increment: article-count+1;
+    content: "0" counter(article-count);
+    color: var(--soft-red);
+    font-size: xx-large;
+    display: grid;
+    font-weight: 700;
+}
+
+section[class="two"] article h3 {
+    color: var(--very-dark-blue);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+section[class="two"] article h3:hover {
+    color: var(--soft-red);
+    font-weight: 800;
+}
+
+section[class="two"] article p {
+    color: var(--dark-grayish-blue);
+}
+
+@container (inline-size < 1000px) {
+    section[class="two"] {
+        grid-template-columns: 1fr;
+        width: 90cqw;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,130 @@
+section[class="one"] {
+    display: grid;
+    justify-content: center;
+}
+
+section[class="main-card"] {
+    display: grid;
+    width: 80cqw;
+    height: fit-content;
+    grid-template-columns: 70fr 25fr;
+}
+
+section[class="left"] {
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+section[class="hero-image"],
+section[class="hero-image"] img {
+    width: 100%;
+    height: 100%;
+}
+
+section[class="main-card-text"] {
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+}
+
+section[class="main-card-text"] h1 {
+    font-weight: 800;
+    font-size: 3.5em;
+    width: 80%;
+    color: var(--very-dark-blue);
+    margin: auto;
+}
+
+section[class="main-card-text-bottom"] {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+section[class="main-card-text-bottom"] p {
+    font-size: 1.2em;
+    margin: 0;
+    place-self: last baseline;
+    color: var(--dark-grayish-blue);
+}
+
+section[class="main-card-text-bottom"] button {
+    text-transform: uppercase;
+    background: var(--soft-red);
+    color: var(--very-dark-blue);
+    border-color: transparent;
+    outline-color: transparent;
+    font-weight: 800;
+    padding: 20px 50px 20px 50px;
+    display: grid;
+    align-self: center;
+    width: max-content;
+    height: max-content;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+section[class="main-card-text-bottom"] button:hover {
+    color: var(--off-white);
+    background: var(--very-dark-blue);
+}
+
+section[class="right"] {
+    background: var(--very-dark-blue);
+}
+
+section[class="news"] {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+section[class="news"] h2 {
+    color: var(--soft-orange);
+    font-size: 2em;
+    font-weight: 800;
+}
+
+section[class="news"] h3 {
+    color: var(--off-white);
+    font-weight: 700;
+}
+
+section[class="news"] h3:hover {
+    color: var(--soft-orange);
+    cursor: pointer;
+}
+
+section[class="news"] p {
+    color: var(--dark-grayish-blue);
+}
+
+@container (inline-size < 1000px) {
+    section[class="main-card"] {
+        grid-template-columns: 1fr;
+        width: 90cqw;
+        height: auto;
+        gap: 50px;
+    }
+
+    section[class="hero-image"],
+    section[class="hero-image"] img {
+        width: 90cqw;
+        height: 100%;
+    }
+
+    section[class="main-card-text"] {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    section[class="main-card-text"] h1 {
+        font-size: 2.5em;
+        width: 100%;
+    }
+
+    section[class="left"] {
+        grid-template-rows: 50fr 50fr;
+        gap: 10px;
+    }
+}

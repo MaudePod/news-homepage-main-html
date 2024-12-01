@@ -1,0 +1,111 @@
+nav {
+    display: grid;
+    grid-template-columns: 100px auto;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+}
+
+section[class="logo"] {
+    height: 50px;
+}
+
+section[class="logo"] svg {
+    width: 100%;
+    height: 100%;
+}
+
+menu[class="main-menu"] {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 50px;
+    list-style-type: none;
+}
+
+menu[class="main-menu"] li:hover {
+    color: var(--soft-orange);
+}
+
+menu[class="main-menu"] li a {
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+:link,
+:visited {
+    text-decoration: none;
+    color: unset;
+}
+
+label[for="open-menu"],
+label[for="close-menu"],
+input[ name="main-menu"] {
+    display: none;
+}
+
+label[for="open-menu"] svg,
+label[for="close-menu"] svg {
+    height: 50px;
+    width: 50px;
+}
+
+@container (inline-size<1000px) {
+    menu[class="main-menu"] {
+        display: none;
+    }
+
+    nav:has(input[id="close-menu"]:checked) {
+        label[for="open-menu"] {
+            display: grid;
+        }
+
+        label[for="close-menu"] {
+            display: none;
+        }
+    }
+
+    nav:has(input[id="open-menu"]:checked) {
+        label[for="open-menu"] {
+            display: none;
+        }
+
+        label[for="close-menu"] {
+            display: grid;
+            position: relative;
+            z-index: 1;
+        }
+
+        menu[class="main-menu"] {
+            display: grid;
+            position: absolute;
+            grid-auto-flow: row;
+            background: white;
+            height: 100cqh;
+            right: 0;
+            bottom: 0;
+            width: 60cqw;
+            padding: 0;
+            margin: 0;
+            grid-auto-rows: min-content;
+            align-content: first baseline;
+            justify-content: center;
+            container: menu / inline-size;
+            gap: 30px;
+        }
+
+        menu[class="main-menu"] li {
+            width: 100cqw;
+            height: 100%;
+            transform: translateY(150px);
+            margin-left: 50px;
+        }
+
+        menu[class="main-menu"] li a {
+            width: 100cqw;
+        }
+    }
+}
