@@ -8,6 +8,7 @@ section[class="main-card"] {
     width: 80cqw;
     height: fit-content;
     grid-template-columns: 70fr 25fr;
+    column-gap: 10px;
 }
 
 section[class="left"] {
